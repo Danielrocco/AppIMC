@@ -1,5 +1,6 @@
 package com.pmdm.appimc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -80,10 +81,12 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
 
     private fun navigate2result(d:Double) {
-        TODO("Not yet implemented")
+        val intentResult = Intent(this, ImcResultActivity::class.java)
+        intentResult.putExtra("IMC", d)
+        startActivity(intentResult)
     }
 
-    private fun calculateImc(): Double {
+    fun calculateImc(): Double {
         var result: Double = 0.0
         result = weight.toDouble()/Math.pow((height/100.0),2.0)
         return result
