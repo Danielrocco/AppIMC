@@ -21,6 +21,7 @@ class ImcResultActivity : AppCompatActivity() {
         initComponents()
         initListeners()
         resultado = intent.extras?.getDouble("IMC")?: 0.0
+
         initUI()
     }
 
