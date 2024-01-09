@@ -89,10 +89,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
     fun calculateImc(): Double {
         var result: Double = 0.0
         result = weight.toDouble()/Math.pow((height/100.0),2.0)
-        val formato = DecimalFormat("#.##")
-        formato.maximumFractionDigits = 2
-        val resultformat = formato.format(result)
-        result = resultformat.toDouble()
         return result
     }
 
